@@ -1,0 +1,32 @@
+<html>
+	<div id="bookListWrapper">
+		<form role="form">
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="searchbook" />
+			</div>
+		</form>
+		<ul class="list-unstyled">
+			<li class="book" ng-repeat="book in books | filter:searchbook">
+				<div id="container">
+					<div class="row">
+						<div class="col-md-4">
+							<img width="200px" height="200px"  src="images/{{book.imgUrl}}" />
+						</div>
+						<div class="col-md-8">
+							<div class="book-details clearfix">
+								<h3>{{book.name}}</h3>
+									<p>Price:  {{book.price}}</p>
+									<ul class="list-unstyled list-inline">
+										<p><li>Rating: {{book.rating}}</li></p>
+										<li>Publisher: {{book.publisher}}</li>
+									</ul>
+									<p>{{book.details}}</p>
+									<button class="btn btn-info pull-right" ng-click="addToCart(book)">Add to Cart</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</html>

@@ -1,0 +1,28 @@
+<html>
+	<div id="bookListWrapper">
+		<p> Wanna buy any book? Click on Buy button </p>
+		<ul class="list-unstyled">
+			<li class="book" ng-repeat="book in cart">
+				<div id="container">
+					<div class="row">
+						<div class="col-md-4">
+							<img width="200px" height="200px"  src="images/{{book.imgUrl}}">
+						</div>
+						<div class="col-md-8">
+							<div class="book-details clearfix">
+								<h3>{{book.name}}</h3>
+									<p>Price:  {{book.price}}</p>
+									<ul class="list-unstyled list-inline">
+										<p><li>Rating: {{book.rating}}</li></p>
+										<li>Publisher: {{book.publisher}}</li>
+									</ul>
+									<p>{{book.details}}</p>
+									<button class="btn btn-info pull-right" ng-click="buy(book)">Buy</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</html>
